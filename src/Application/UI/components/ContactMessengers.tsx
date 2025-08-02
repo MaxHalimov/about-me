@@ -1,9 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
+import { motion } from 'framer-motion';
 
 interface ContactMessengersProps {}
 
 const ContactMessengers: React.FC<ContactMessengersProps> = ({}) => {
     const [isExpanded, setIsExpanded] = useState(false);
+    const [isHovering, setIsHovering] = useState(false);
+    const [isActive, setIsActive] = useState(false);
+
+    const onMouseDownHandler = useCallback(() => {
+        setIsActive(true);
+        setIsExpanded(!isExpanded);
+    }, [isExpanded]);
+
+    const onMouseUpHandler = useCallback(() => {
+        setIsActive(false);
+    }, []);
 
     const messengers = [
         {
@@ -40,14 +52,27 @@ const ContactMessengers: React.FC<ContactMessengersProps> = ({}) => {
 
     return (
         <div style={styles.container}>
-            <div 
+            <div
+                onMouseEnter={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}
                 style={styles.toggleButton}
-                onClick={() => setIsExpanded(!isExpanded)}
+                onMouseDown={onMouseDownHandler}
+                onMouseUp={onMouseUpHandler}
+                className="icon-control-container"
+                id="prevent-click"
                 title="Связаться со мной"
             >
-                <svg width="10" viewBox="0 0 24 24" fill="white">
+                <motion.svg
+                    id="prevent-click"
+                    width={window.innerWidth < 768 ? 8 : 10}
+                    viewBox="0 0 24 24" 
+                    fill="white"
+                    style={{ opacity: isActive ? 0.2 : isHovering ? 0.8 : 1 }}
+                    animate={isActive ? 'active' : isHovering ? 'hovering' : 'default'}
+                    variants={iconVars}
+                >
                     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                </svg>
+                </motion.svg>
             </div>
             
             {isExpanded && (
@@ -88,15 +113,14 @@ const styles: StyleSheetCSS = {
     toggleButton: {
         background: 'black',
         padding: 4,
-        minWidth: '32px',
-        minHeight: '24px',
+        paddingLeft: 8,
+        paddingRight: 8,
         textAlign: 'center',
         display: 'flex',
         boxSizing: 'border-box',
         justifyContent: 'center',
         alignItems: 'center',
-        cursor: 'pointer',
-        transition: 'all 0.3s ease'
+        cursor: 'pointer'
     },
     messengersContainer: {
         position: 'absolute',
@@ -126,6 +150,32 @@ const styles: StyleSheetCSS = {
         animation: 'slideInDown 0.3s ease forwards',
         opacity: 0,
         transform: 'translateY(-10px)',
+    },
+};
+
+const iconVars = {
+    hovering: {
+        opacity: 0.8,
+        transition: {
+            duration: 0.1,
+            ease: 'easeOut',
+        },
+    },
+    active: {
+        scale: 0.8,
+        opacity: 0.5,
+        transition: {
+            duration: 0.1,
+            ease: 'easeOut',
+        },
+    },
+    default: {
+        scale: 1,
+        opacity: 1,
+        transition: {
+            duration: 0.2,
+            ease: 'easeOut',
+        },
     },
 };
 
