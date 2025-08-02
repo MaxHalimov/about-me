@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import FreeCamToggle from './FreeCamToggle';
 import MuteToggle from './MuteToggle';
+import ContactMessengers from './ContactMessengers';
 
 interface InfoOverlayProps {
     visible: boolean;
@@ -20,6 +21,7 @@ const InfoOverlay: React.FC<InfoOverlayProps> = ({ visible }) => {
     const [textDone, setTextDone] = useState(false);
     const [volumeVisible, setVolumeVisible] = useState(false);
     const [freeCamVisible, setFreeCamVisible] = useState(false);
+    const [messengersVisible, setMessengersVisible] = useState(false);
 
     const typeText = (
         i: number,
@@ -83,6 +85,9 @@ const InfoOverlay: React.FC<InfoOverlayProps> = ({ visible }) => {
                 setVolumeVisible(true);
                 setTimeout(() => {
                     setFreeCamVisible(true);
+                    setTimeout(() => {
+                        setMessengersVisible(true);
+                    }, 250);
                 }, 250);
             }, 250);
         }
@@ -135,6 +140,11 @@ const InfoOverlay: React.FC<InfoOverlayProps> = ({ visible }) => {
                     {freeCamVisible && (
                         <div style={styles.lastRowChild}>
                             <FreeCamToggle />
+                        </div>
+                    )}
+                    {messengersVisible && (
+                        <div style={styles.lastRowChild}>
+                            <ContactMessengers />
                         </div>
                     )}
                 </div>

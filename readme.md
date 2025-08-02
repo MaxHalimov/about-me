@@ -1,29 +1,86 @@
-# henryheffernan.com
+# 🎨 Max Halimov - 3D Portfolio Website
 
-This is one of two repositories created for my portfolio website <a href="https://henryheffernan.com/"><samp>henryheffernan.com</samp></a>. If you are looking for the 2D OS repository you can find it <a href="https://github.com/henryjeff/portfolio-inner-site"><samp>here</samp></a>! Thanks for taking the time to check this out. If you have any questions of comments, feel free to shoot me an email at <samp><a href="mailto:henryheffernan@gmail.com">henryheffernan@gmail.com</a></samp> or you can DM me on twitter <a href="https://twitter.com/henryheffernan"><samp>@henryheffernan</samp></a>.
+Интерактивное 3D портфолио на Three.js с React интерфейсом и интеграцией мессенджеров для связи.
 
-<br>
+## ✨ Особенности:
 
-To setup a dev environment:
+- 🎮 **3D интерактивная сцена** на Three.js
+- 📱 **Современный UI** на React + TypeScript  
+- 💬 **Интеграция мессенджеров** (Telegram, WhatsApp, Email, LinkedIn)
+- 🎵 **3D пространственный звук**
+- 📱 **Адаптивный дизайн**
+- 🚀 **Готов к деплою** на GitHub Pages
 
+## 🚀 Быстрый старт:
+
+### Разработка:
 ```bash
-# Clone the repository
+# Клонируйте репозиторий
+git clone https://github.com/ВАШ_USERNAME/portfolio-website.git
 
-# Install dependencies 
-npm i
+# Установите зависимости
+npm install
 
-# Run the local dev server
+# Запустите dev сервер
 npm run dev
 ```
 
-To serve a production build:
-
+### Production сборка:
 ```bash
-# Install dependencies if not already done - 'npi i'
-
-# Build for production
+# Соберите проект
 npm run build
 
-# Serve the build using express
-npm start
+# Предварительный просмотр
+npm run preview
 ```
+
+## 📱 Настройка мессенджеров:
+
+1. Откройте `src/Application/UI/components/ContactMessengers.tsx`
+2. Замените ссылки на ваши профили:
+   - Telegram: `https://t.me/ВАШ_USERNAME`
+   - WhatsApp: `https://wa.me/ВАШ_НОМЕР`
+   - Email: `mailto:ВАШ_EMAIL`
+   - LinkedIn: `https://linkedin.com/in/ВАШ_USERNAME`
+
+## 🌐 Публикация на GitHub Pages:
+
+Подробная инструкция в файле [GITHUB_PAGES_SETUP.md](./GITHUB_PAGES_SETUP.md)
+
+1. Настройте ссылки в `ContactMessengers.tsx`
+2. Обновите пути в конфигурации
+3. Включите GitHub Pages в настройках репозитория
+4. Пушьте изменения - автодеплой настроен!
+
+## 🛠 Технологии:
+
+- **Frontend**: Three.js, React, TypeScript, GSAP
+- **Bundler**: Webpack 5
+- **Стили**: CSS-in-JS
+- **Deploy**: GitHub Actions + GitHub Pages
+
+## 📦 Структура проекта:
+
+```
+src/
+├── Application/           # Главный класс приложения
+│   ├── World/            # 3D сцена и объекты
+│   ├── UI/               # React интерфейс
+│   │   └── components/   # UI компоненты
+│   ├── Audio/            # Аудио система
+│   └── Utils/            # Утилиты
+static/                   # Статические файлы
+├── models/               # 3D модели
+├── textures/             # Текстуры
+└── audio/                # Звуки
+```
+
+## 🎮 Управление:
+
+- **Мышь**: Вращение камеры
+- **Клик**: Интерактивные элементы
+- **Scroll**: Зум камеры
+
+## 📝 Лицензия:
+
+MIT License
