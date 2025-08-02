@@ -115,9 +115,6 @@ const styles: StyleSheetCSS = {
     },
     toggleButton: {
         background: 'black',
-        padding: 4,
-        paddingLeft: 8,
-        paddingRight: 8,
         textAlign: 'center',
         display: 'flex',
         boxSizing: 'border-box',
