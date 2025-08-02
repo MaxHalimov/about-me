@@ -87,15 +87,16 @@ const styles: StyleSheetCSS = {
     },
     toggleButton: {
         background: 'black',
-        border: '1px solid rgba(255, 255, 255, 0.2)',
-        width: '24.5px',
-        height: '24.5px',
-        cursor: 'pointer',
-        transition: 'all 0.3s ease',
-        backdropFilter: 'blur(10px)',
+        padding: 4,
+        paddingLeft: 8,
+        paddingRight: 8,
+        textAlign: 'center',
         display: 'flex',
+        boxSizing: 'border-box',
+        justifyContent: 'center',
         alignItems: 'center',
-        justifyContent: 'center'
+        cursor: 'pointer',
+        transition: 'all 0.3s ease'
     },
     messengersContainer: {
         position: 'absolute',
