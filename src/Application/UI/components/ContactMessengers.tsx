@@ -64,13 +64,12 @@ const ContactMessengers: React.FC<ContactMessengersProps> = ({}) => {
             >
                 <motion.svg
                     id="prevent-click"
-                    width={window.innerWidth < 768 ? 8 : 10}
-                    viewBox="0 0 24 24" 
                     fill="white"
                     style={{ 
                         opacity: isActive ? 0.2 : isHovering ? 0.8 : 1,
                         display: 'block'
                     }}
+                    width={window.innerWidth < 768 ? 8 : 10}
                     animate={isActive ? 'active' : isHovering ? 'hovering' : 'default'}
                     variants={iconVars}
                 >
