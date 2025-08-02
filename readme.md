@@ -16,7 +16,7 @@
 ### Разработка:
 ```bash
 # Клонируйте репозиторий
-git clone https://github.com/ВАШ_USERNAME/portfolio-website.git
+git clone https://github.com/MaxHalimov/about-me.git
 
 # Установите зависимости
 npm install

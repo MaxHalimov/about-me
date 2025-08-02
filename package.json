@@ -1,10 +1,10 @@
 {
     "name": "portfolio-website",
     "version": "1.0.0",
-    "homepage": "https://ВАШИ_USERNAME.github.io/НАЗВАНИЕ_РЕПО",
+    "homepage": "https://MaxHalimov.github.io/about-me",
     "repository": {
         "type": "git",
-        "url": "https://github.com/ВАШИ_USERNAME/НАЗВАНИЕ_РЕПО.git"
+        "url": "https://github.com/MaxHalimov/about-me.git"
     },
     "license": "MIT",
     "scripts": {
