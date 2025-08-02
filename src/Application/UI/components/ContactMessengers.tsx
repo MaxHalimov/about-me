@@ -64,6 +64,7 @@ const ContactMessengers: React.FC<ContactMessengersProps> = ({}) => {
             >
                 <motion.svg
                     id="prevent-click"
+                    viewBox="0 0 24 24"
                     fill="white"
                     style={{ 
                         opacity: isActive ? 0.2 : isHovering ? 0.8 : 1,
