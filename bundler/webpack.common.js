@@ -9,7 +9,7 @@ module.exports = {
         hashFunction: 'xxhash64',
         filename: 'bundle.[contenthash].js',
         path: path.resolve(__dirname, '../public'),
-        publicPath: process.env.NODE_ENV === 'production' ? '/about-me/' : '/',
+        publicPath: process.env.NODE_ENV === 'production' || process.env.CI ? '/about-me/' : '/',
     },
     devtool: 'source-map',
     plugins: [
