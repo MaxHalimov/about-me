@@ -88,8 +88,8 @@ const styles: StyleSheetCSS = {
     toggleButton: {
         background: 'black',
         padding: 4,
-        paddingLeft: 8,
-        paddingRight: 8,
+        minWidth: '32px',
+        minHeight: '24px',
         textAlign: 'center',
         display: 'flex',
         boxSizing: 'border-box',
